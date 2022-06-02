@@ -1,12 +1,13 @@
 pipeline {
     agent {
-        label 'docker'
+        node {
+            label 'docker'
+        }
     }
-
     stages {
-            stage('Source') {
-                steps {
-                    git 'https://github.com/beaserter/unir-cicd.git'
+        stage('Source') {
+            steps {
+                git 'https://github.com/beaserter/unir-cicd.git'
             }
         }
 
