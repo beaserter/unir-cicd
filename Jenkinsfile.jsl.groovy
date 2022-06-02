@@ -23,4 +23,11 @@ pipeline {
             }
         }
     }
+    post {
+	    always {
+	        echo "Clean..."
+            cleanWs()
+        }
+    
+    }
 }
