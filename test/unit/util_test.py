@@ -3,7 +3,6 @@ import pytest
 
 from app import util
 
-
 @pytest.mark.unit
 class TestUtil(unittest.TestCase):
     def test_convert_to_number_correct_param(self):
@@ -18,6 +17,7 @@ class TestUtil(unittest.TestCase):
 
     def test_convert_to_number_invalid_type(self):
         self.assertRaises(TypeError, util.convert_to_number, "")
+        self.assertRaises(TypeError, util.convert_to_number, "3.h")
         self.assertRaises(TypeError, util.convert_to_number, "s")
         self.assertRaises(TypeError, util.convert_to_number, None)
         self.assertRaises(TypeError, util.convert_to_number, object())

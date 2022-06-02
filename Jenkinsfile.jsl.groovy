@@ -2,24 +2,28 @@ pipeline {
     agent {
         label 'docker'
     }
+
     stages {
             stage('Source') {
                 steps {
-                    git 'https://github.com/beaserter/unir-cicd.git'
+                    git 'https://github.com/beaserter/unir-test.git'
             }
         }
+
         stage('Build') {
             steps {
                 echo 'Building stage!'
                 sh 'make build'
             }
         }
+
         stage('Unit tests') {
             steps {
                 sh 'make test-unit'
                 archiveArtifacts artifacts: 'results/*.xml'
             }
         }
+
         stage('Unit api') {
             steps {
                 sh 'make test-api'
@@ -27,6 +31,7 @@ pipeline {
             }
         }
     }
+    
     post {
         always {
             junit 'results/*_result.xml'
