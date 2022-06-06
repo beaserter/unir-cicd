@@ -21,12 +21,27 @@ pipeline {
             }
         }
 
+        stage('Browser Test cypress') {
+            steps {
+                sh 'make test-cypress'
+                archiveArtifacts artifacts: 'results/*.xml'
+            }
+        }
+
         stage('Unit api') {
             steps {
                 sh 'make test-api'
                 archiveArtifacts artifacts: 'results/*.xml'
             }
         }
+
+        stage('Integration tests') {
+            steps {
+                sh 'make test-integration'
+                archiveArtifacts artifacts: 'results/*.xml'
+            }
+        }
+
     }
     
     post {
