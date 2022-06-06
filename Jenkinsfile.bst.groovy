@@ -61,15 +61,15 @@ pipeline {
             cleanWs()
         }
         success {
-            emailext body: "Pipeline ${JOB_NAME} finalise succesful in execution number ${EXECUTOR_NUMBER}", subject: "Pipeline successful", to: "devs@unir.net"
+            emailext body: 'Pipeline ${JOB_NAME} finalise succesful in execution number ${EXECUTOR_NUMBER}', subject: "Pipeline successful", to: "devs@unir.net"
         }
         /*
         unstable {
-            emailext body: "Pipeline ${JOB_NAME} finalise not succesful in execution number ${EXECUTOR_NUMBER}", subject: "Pipeline tests not successful", to: "devs@unir.net"
+            emailext body: "Pipeline ${JOB_NAME} finalise not succesful in execution number ${EXECUTOR_NUMBER}", subject: "Pipeline not successful", to: "devs@unir.net"
         }
         */
         failure {
-            emailext body: "Pipeline ${JOB_NAME} failed in execution number ${EXECUTOR_NUMBER}", subject: "Pipeline error", to: "devops@unir.net,devs@unir.net"
+            emailext body: 'Pipeline ${JOB_NAME} failed in execution number ${EXECUTOR_NUMBER}', subject: "Pipeline error", to: "devops@unir.net,devs@unir.net"
         }
     }
 }
