@@ -61,7 +61,7 @@ pipeline {
             cleanWs()
         }
         success {
-            emailext body: "Pipeline '${JOB_NAME}' finalise succesful in execution number '${EXECUTOR_NUMBER}'", subject: "Pipeline successful", to: "beatriz.serrano532@comunidadunir.net"
+            emailext body: "Pipeline '${JOB_NAME}' finalise succesful in execution number '${EXECUTOR_NUMBER}'", subject: "Pipeline successful", to: "beaserter@gmail.com"
         }
         /*
         unstable {
