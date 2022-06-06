@@ -60,10 +60,11 @@ pipeline {
             junit 'results/*_result.xml'
             cleanWs()
         }
+        /*
         success {
             emailext body: "Pipeline '${JOB_NAME}' finalise succesful in execution number '${EXECUTOR_NUMBER}'", subject: "Pipeline successful", to: "beaserter@gmail.com"
         }
-        /*
+  
         unstable {
             emailext body: "Pipeline ${JOB_NAME} finalise not succesful in execution number ${EXECUTOR_NUMBER}", subject: "Pipeline not successful", to: "devs@unir.net"
         }
