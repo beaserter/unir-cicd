@@ -1,27 +1,6 @@
-library(
-      identifier: 'unir-cicd@master',
-      retriever: modernSCM(
-        [
-          $class: 'GitSCMSource',
-          remote: "https://github.com/beaserter/unir-cicd.git"
-        ]
-      )
-    ) _
-
 pipeline {
     agent any
     stages {
-        stage('Commit info') {
-            steps {
-                jslInfo()
-            }
-        }
-        stage('Repo details') {
-            steps {
-                echo "Repository name: ${jslGit.getRemoteRepoName()}"
-                echo "Repository owner: ${jslGit.getRemoteRepoOwner()}"
-            }
-        }
         stage('Source') {
             steps {
                 git 'https://github.com/beaserter/unir-cicd.git'
