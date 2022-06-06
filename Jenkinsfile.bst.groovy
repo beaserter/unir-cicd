@@ -1,9 +1,9 @@
 library(
-      identifier: 'unir-jsl@master',
+      identifier: 'unir-cicd@master',
       retriever: modernSCM(
         [
           $class: 'GitSCMSource',
-          remote: "https://github.com/srayuso/unir-jsl.git"
+          remote: "https://github.com/beaserter/unir-cicd.git"
         ]
       )
     ) _
