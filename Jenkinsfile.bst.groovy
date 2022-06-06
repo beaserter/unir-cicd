@@ -5,7 +5,7 @@ library(
         [
           $class: 'GitSCMSource',
           //remote: "https://github.com/srayuso/unir-jsl.git"
-          remote: 'https://github.com/beaserter/unir-cicd.git'
+          remote: "https://github.com/beaserter/unir-cicd.git"
         ]
       )
     ) _
