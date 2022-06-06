@@ -42,6 +42,13 @@ pipeline {
             }
         }
 
+        stage('test-e2e-wiremock') {
+            steps {
+                sh 'make test-e2e-wiremock'
+                archiveArtifacts artifacts: 'results/*.xml'
+            }
+        }
+
 
     }
     
