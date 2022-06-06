@@ -1,4 +1,4 @@
-node('agent01') {
+node('docker') {
     stage('Source') {
         git 'https://github.com/beaserter/unir-cicd.git'
     }
