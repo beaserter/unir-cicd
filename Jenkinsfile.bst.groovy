@@ -60,9 +60,11 @@ pipeline {
             junit 'results/*_result.xml'
             cleanWs()
         }
+        /*
         success {
             emailext body: 'Test Message Success', subject: "Pipeline successful", to: "devs@unir.net"
         }
+        */
         unstable {
             emailext body: 'Test Message Unstable', subject: "Pipeline tests not successful", to: "devs@unir.net"
         }
