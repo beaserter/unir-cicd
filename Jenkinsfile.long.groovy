@@ -11,7 +11,7 @@ pipeline {
     }
 
     environment {
-        AN_ACCESS_KEY = credentials('my-predefined-secret-text')
+        //AN_ACCESS_KEY = credentials('my-predefined-secret-text')
         PULL_REQUEST = "pr-${env.CHANGE_ID}"
         IMAGE_TAG = "${env.PULL_REQUEST}"
     }
@@ -136,15 +136,12 @@ pipeline {
     post {
         success {
             emailext body: 'Test Message Success', subject: "Pipeline successful", to: "devs@unir.net"
-            //cleanWs()
         }
         unstable {
             emailext body: 'Test Message Unstable', subject: "Pipeline tests not successful", to: "devs@unir.net"
-            //cleanWs()
         }
         failure {
             emailext body: 'Test Message Fail', subject: "Pipeline error", to: "devops@unir.net,devs@unir.net"
-            //cleanWs()
         }
     }
     
