@@ -39,13 +39,6 @@ pipeline {
             }
         }
 
-        stage('pylint') {
-            steps {
-                sh 'make pylint'
-                archiveArtifacts artifacts: 'results/*.xml'
-            }
-        }
-
     }
     
     post {
