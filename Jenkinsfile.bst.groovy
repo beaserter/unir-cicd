@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Commit info') {
             steps {
-                cicdInfo()
+                jslInfo()
             }
         }
         stage('Repo details') {
